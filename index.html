@@ -4,12 +4,15 @@
 <head>
   <title>BLOG, BY JAEYUN</title>
   <meta charset="utf-8">
-  <style media="screen">
+  <style>
     a {
       color:black;
     }
   </style>
   <!-- utf-8로 열어라!-->
+  <!-- <style></style> css 선언.
+  {}선택자(셀렉터), color:black;선언(declaration)
+  a태그 안에 있는 글자를 검은 색으로 표시.
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156591430-1"></script>
 <script>
@@ -24,7 +27,6 @@
 <!-- 초기설정은 head로 묶기 -->
 
 <body>
-  <div class="powr-countdown-timer" id="8b35cee6_1579672721"></div><script src="https://www.powr.io/powr.js?platform=html"></script>
 <!-- 본문은 body로 묶기 -->
 <h1 style="font-size:20px;">
   <a href="index.html"
@@ -34,7 +36,7 @@
 <!-- a=anchor(닷) / href=hypertext reference(바로가기) / target="_blank"새탭 / title=주석 -->
 <img src="girl.jpg" width="20%" title="thumbnail">
 <!-- 이미지 공공재 사이트 unsplash.com
-이것은 속성이라는 문법, 위치는 상관없고 끝맺는 </>가 없음 -->
+이것은 속성(attribute)이라는 문법, 위치는 상관없고 끝맺는 </>가 없음 -->
 <h2>목차</h2>
 <ul>
   <li><a href="plan.html">계획</a></li>
@@ -44,8 +46,8 @@
   <p style="margin-top:10px;"><li><a href="helpful.html">유용한 사이트</a></li></p>
 <!--
   p(paragraph=단락) 가로 전체 공간을 여백없이 쌓여서 출력되며 브라우저 사이즈에 따라 자유롭게 움직이나, // div와 다른 점은 여백이 있다는 것.
-  div(divition=분할) 가로 전체 공간을 여백없이 쌓여서 출력되며 브라우저의 사이즈에 따라 자유롭게 움직임
-  span(폭) inline(가로출력) 형태로 자기가 차지한 공간만큼만 인정, 브라우저의 사이즈에 따라 세로로 출력되며 절대적 크기는 변하지 않음.
+  div(divition=분할) 가로 전체 공간을 여백없이 쌓여서 출력되며 브라우저의 사이즈에 따라 자유롭게 움직임 // css디자인을 하기 위해 태그가 필요할 때 아무런 의미도 없는 div가 쓰임. (block element)  div=span(용도)
+  span(폭) inline(가로출력) 형태로 자기가 차지한 공간만큼만 인정, 브라우저의 사이즈에 따라 세로로 출력되며 절대적 크기는 변하지 않음. // css디자인을 하기 위해 태그가 필요할 때 아무런 의미도 없는 span이 쓰임 (inline ele)
 -->
 </ul>
 <h2>메인화면</h2>
@@ -59,7 +61,7 @@ ol=ordered list / ul=unordered list / li= list
 </html>
 
 <!--
-<hr> 구분선
+<hr> 구분선 horizontal line
 <b></b> <strong></strong> strong은 두껍고 "중요하다는 의미"
 <mark></mark> 하이라이팅 효과
 <del></del> 글자 취소선
