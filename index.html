@@ -4,6 +4,11 @@
 <head>
   <title>BLOG, BY JAEYUN</title>
   <meta charset="utf-8">
+  <style media="screen">
+    a {
+      color:black;
+    }
+  </style>
   <!-- utf-8로 열어라!-->
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156591430-1"></script>
@@ -19,6 +24,7 @@
 <!-- 초기설정은 head로 묶기 -->
 
 <body>
+  <div class="powr-countdown-timer" id="8b35cee6_1579672721"></div><script src="https://www.powr.io/powr.js?platform=html"></script>
 <!-- 본문은 body로 묶기 -->
 <h1 style="font-size:20px;">
   <a href="index.html"
@@ -36,9 +42,69 @@
   <p style="margin-top:10px;"><li><a href="coding.html">코딩공부</a></li></p>
   <p style="margin-top:10px;"><li><a href="idea.html">아이디어</a></li></p>
   <p style="margin-top:10px;"><li><a href="helpful.html">유용한 사이트</a></li></p>
+<!--
+  p(paragraph=단락) 가로 전체 공간을 여백없이 쌓여서 출력되며 브라우저 사이즈에 따라 자유롭게 움직이나, // div와 다른 점은 여백이 있다는 것.
+  div(divition=분할) 가로 전체 공간을 여백없이 쌓여서 출력되며 브라우저의 사이즈에 따라 자유롭게 움직임
+  span(폭) inline(가로출력) 형태로 자기가 차지한 공간만큼만 인정, 브라우저의 사이즈에 따라 세로로 출력되며 절대적 크기는 변하지 않음.
+-->
 </ul>
 <h2>메인화면</h2>
 <p>대충 메인화면이라는 소개</p>
-<!-- ol=ordered list / ul=unordered list / li= list -->
+<!--
+ol=ordered list / ul=unordered list / li= list
+- disc : 검정색 작은 원 모양 (기본설정)
+- circle : 흰색 작은 원 모양
+- square : 사각형 모양-->
 </body>
 </html>
+
+<!--
+<hr> 구분선
+<b></b> <strong></strong> strong은 두껍고 "중요하다는 의미"
+<mark></mark> 하이라이팅 효과
+<del></del> 글자 취소선
+<u> </u><ins></ins> 글자 밑줄
+
+<sup></sup> 위 첨자
+<sub></sub> 아래 첨자
+
+<q></q> 짧은 인용구
+<blockquote</blockquote> 블록 인용
+<h1 style="background-color:white; color:maroon; font-size:150%; text-align:center"> </h1> 배경색, 글자색, 폰트크기, 중앙정렬
+
+<style>
+
+    a:link    { color: teal; }
+    방문한 적이 없는 상태(기본 설정)
+    a:visited { color: maroon; text-decoration: none }
+    방문한 적이 있는 상태
+    a:hover   { color: yellow; text-decoration: none }
+    링크 위에 마우스를 올려놓은 상태
+    a:active  { color: red; text-decoration: none }
+    링크를 마우스로 누르고 있는 상태
+</style>
+
+<img src="이미지주소" alt="대체문자열">
+<img src="/img_html5_logo.png" alt="이미지가 없나봐요..">
+
+
+<table style="width:100%">
+<caption>해양 생물</caption>
+  <tr style="background-color:lightgrey">
+    <th>참치</th>
+    <th>고래</th>
+  </tr>
+  <tr>
+    <td>상어</td>
+    <td>문어</td>
+  </tr>
+  <tr>
+    <td>오징어</td>
+    <td>고등어</td>
+  </tr>
+</table>
+table 표 만들기
+tr 열 나누기
+th 각 열의 제목
+td 각 열의 내용
+-->
