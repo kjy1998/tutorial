@@ -1,89 +1,89 @@
 <!doctype html> <!--이 문서는 html로 이루어졌다 -->
 <html>
 <!-- 초기설정 head와 본문 body를 묶는 태그는 html -->
-<head>
-  <title>BLOG, BY JAEYUN</title>
-  <meta charset="utf-8">
-  <style>
-    body{
-      margin:0;
-    }
-    a {
-      color:black;
-      text-decoration:none;
-    }
-    #active {
-      color:red;
-    }
-    .saw {
-      color:gray;
-    }
-    h1 {
-      font-size:4  5px;
-      text-align:center;
-      border-bottom:2px solid gray;
-      margin:0;
-      padding-top:10px;
-      padding-bottom:20px;
-    }
-    ul {
-      border-right:2px solid gray;
-      width:150px;
-      margin:0;
-      padding:20px;
-    }
-  </style>
-  <!-- utf-8로 열어라!-->
-  <!-- <style></style> css 선언.
-  a{}선택자(셀렉터), 선택자 내용은 선언(declaration)또는 효과라고 함.
-  color:black 속성명:속성값
+  <head>
+    <title>BLOG, BY JAEYUN</title>
+    <meta charset="utf-8">
+    <style>
+      body{
+        margin:0;
+      }
+      a {
+        color:black;
+        text-decoration:none;
+      }
+      #active {
+        color:red;
+      }
+      .saw {
+        color:gray;
+      }
+      h1 {
+        font-size:4  5px;
+        text-align:center;
+        border-bottom:2px solid gray;
+        margin:0;
+        padding-top:10px;
+        padding-bottom:20px;
+      }
+        ul {
+        border-right:2px solid gray;
+        width:150px;
+        margin:0;
+        padding:20px;
+      }
+    </style>
+<!-- utf-8로 열어라!-->
+<!-- <style></style> css 선언.
+a{}선택자(셀렉터), 선택자 내용은 선언(declaration)또는 효과라고 함.
+color:black 속성명:속성값
 
-  ;(세미콜론)을 넣는 이유는 한 태그 안에 여러 선언을 구별해서 넣기 위함임.
+;(세미콜론)을 넣는 이유는 한 태그 안에 여러 선언을 구별해서 넣기 위함임.
 
-  직접 태그에 각 속성을 넣기 위해서는 style이라는 속성명을 넣어줘야함.
+직접 태그에 각 속성을 넣기 위해서는 style이라는 속성명을 넣어줘야함.
 
-  (class).saw 는 class="saw", 즉 saw라는 태그를 가진 선택자를 뜻함.
+(class).saw 는 class="saw", 즉 saw라는 태그를 가진 선택자를 뜻함.
 
-  선택자 우선순위 id>class>그룹 순이며 기준은 고유성 크기별임 / 모두 같은 종류인 경우 가장 마지막에 오는 선택자가 가장 쏌 / h1, a {}처럼 ,(콤마)로 합칠 수 있음
+선택자 우선순위 id>class>그룹 순이며 기준은 고유성 크기별임 / 모두 같은 종류인 경우 가장 마지막에 오는 선택자가 가장 쏌 / h1, a {}처럼 ,(콤마)로 합칠 수 있음
 
-  class 선택자는 학급이라는 뜻으로 즉 "saw active"처럼
-  각각 saw, active 여러 개를 넣을 수 있음
+class 선택자는 학급이라는 뜻으로 즉 "saw active"처럼
+각각 saw, active 여러 개를 넣을 수 있음
 
-  class는 .태그명
-  id는 #태그명
+class는 .태그명
+id는 #태그명
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156591430-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156591430-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'UA-156591430-1');
-</script>
-  <!-- 방문자 분석기 analytics.com 참조 -->
-</head>
+      gtag('config', 'UA-156591430-1');
+    </script>
+<!-- 방문자 분석기 analytics.com 참조 -->
+  </head>
 <!-- 초기설정은 head로 묶기 -->
 
-<body>
+  <body>
 <!-- 본문은 body로 묶기 -->
-<h1>
-  <a href="index.html"
-  title="index"><strong>메인화면</strong>
-  </a>
-</h1>
+    <h1>
+    <a href="index.html"
+    title="index"><strong>메인화면</strong>
+    </a>
+    </h1>
 <!-- a=anchor(닷) / href=hypertext reference(바로가기) / target="_blank"새탭 / title=주석 -->
-<!-- 이미지 공공재 사이트 unsplash.com
+<!-- 이미지 공공재 사이트 unsplash.com, pixabay.com
 이것은 속성이라는 문법, 위치는 상관없고 끝맺는 </>가 없음 -->
-<ul>
-  <li><a href="plan.html" style="color:red;text-decoration:underline">계획</a></li>
-  <p style="margin-top:10px;"><li><a href="lab.html" class="saw" id="active">실험실</a></li></p>
-  <p style="margin-top:10px;"><li><a href="coding.html" class="saw">코딩공부</a></li></p>
-  <p style="margin-top:10px;"><li><a href="idea.html" class="saw">아이디어</a></li></p>
-  <p style="margin-top:10px;"><li><a href="helpful.html" class="saw">유용한 사이트</a></li></p>
-</ul>
-<h2>계획</h2>
-<p>대충 계획 화면이라는 소개</p>
+    <ul>
+      <li><a href="plan.html" style="color:red;text-decoration:underline">계획</a></li>
+      <p style="margin-top:10px;"><li><a href="lab.html" class="saw" id="active">실험실</a></li></p>
+      <p style="margin-top:10px;"><li><a href="coding.html" class="saw">코딩공부</a></li></p>
+      <p style="margin-top:10px;"><li><a href="idea.html" class="saw">아이디어</a></li></p>
+      <p style="margin-top:10px;"><li><a href="helpful.html" class="saw">유용한 사이트</a></li></p>
+    </ul>
+    <h2>계획</h2>
+    <p>대충 계획 화면이라는 소개</p>
 <!-- ol=ordered list / ul=unordered list / li= list -->
-</body>
+  </body>
 </html>
