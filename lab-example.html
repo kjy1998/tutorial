@@ -17,12 +17,12 @@ margin 박스와 박스가 멀어짐*/
 /* border가 "중복" 된 width, color, style를 합쳐버림 */
 /*
 display:none; 안보임
-display:block 화면전체
-display:inline 자기공간만을
+display:block; 화면전체
+display:inline; 자기공간만을 가짐
 */
         }
 
-      a{
+      #test{
         border-width:5px;
         border-color:red;
         border-style: solid;
@@ -36,6 +36,7 @@ a는 링크이므로 이어서 오는 글에 단락띄어쓰기가 되면 불편
         border:5px solid pink;
         display:grid;
         grid-template-columns: 1fr 1fr;
+
 /*
 grid(그리드)를 사용하기 위한
 display:grid;사용 후
@@ -64,7 +65,7 @@ grid-template-columns:
 
       gtag('config', 'UA-156591430-1');
     </script>
-<!-- 방문자 분석기 analytics.com 참조 -->
+<!-- 방문자 분석기 사이트 analytics.com 참조 -->
   </head>
   <body>
 
@@ -78,9 +79,21 @@ grid-template-columns:
     <iframe width="939" height="538" src="https://www.youtube.com/embed/NAi690rUpMk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </p>
 
+    <!--
+    <iframe src="삽입할 페이지 주소"></iframe>
+  -->
+    <hr>
+    <p>
+배너 예제
+    </p>
+    <a href="plan.html">
+      <img src="girl.jpg" width="20%">
+    </a>
+
+
     <hr>
 댓글 예제
-<!-- disqus site참조 -->
+<!-- disqus site 사이트 참조 -->
     <p>
       <div id="disqus_thread"></div>
       <script>
@@ -122,9 +135,10 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
 <!--End of Tawk.to Script-->
 
     <hr>
-박스예제
+박스 예제
     <h1>박스</h1>
-    <h1>박스</h1>이 문단은 박스예제를 (<a href="https://naver.com">테스트</a>)하기 위한 아무 의미도 없는 글입니다. 사실 테스트를 하기 위한 의미가 있지만 없다고 칩니다.
+    <h1>박스</h1>이 문단은 박스예제를 (<a id="test" href="https://naver.com">테스트</a>)하기 위한 아무 의미도 없는 글입니다. 사실 테스트를 하기 위한 의미가 있지만 없다고 칩니다.
+
     <p><img src="box-model.png" alt="사라져버렸네요" width="60%"></p>
 
     <hr>
@@ -139,10 +153,5 @@ Grid(div, span) 예제
       <div>아무 내용 없는 글입니다. 아무 의미도 없지만 그리드를 여러가지 유형으로 테스트 하기 위한 것 입니다. 가나다라마바사아자차카타파하 abcdefghijklmnopqrstuw</div>
     </div>
 <!-- Grid(그리드)를 쓰기 위해(나란히 배치하기 위해) 부모 자식태그를 똑같은 태그로 묶었습니다 -->
-
-
-
-
-
   </body>
 </html>
