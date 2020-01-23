@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <input type="button" value="hi" onclick="alert('Hi')">
+    <input type="text" onchange="alert('chnaged')">
+    <input type="text" onkeydown="alert('key down')">
+
+    <!-- onclick onchange onkeydown 이벤트(event)라고 함.
+    이벤트 안에는 자바스크립트 언어가 입력되어야 함.
+
+    자바스크립트 언어는 ""(큰따음표)안에는 ''(작은따옴표)가 와야 함. 반대로 ''(작은따옴표)안에는 ""(큰따옴표)가 와야 함.
+    하나라도 바뀌면 작동안함.
+    -->
+
+    <input type="button" value="night" onclick="
+      document.querySelector('body').style.backgroundColor='black';
+      document.querySelector('body').style.color='white';
+    ">
+    <input type="button" value="day" onclick="
+      document.querySelector('body').style.backgroundColor='white';
+      document.querySelector('body').style.color='black'
+    ">
+    <!-- body라는 태그의 css(style)를 선택하여 배경을 검은색/하얀색, 글씨색을 하얀색/검은색으로 한다.-->
+
+    <!-- 윗태그의 개선안인 아래 태그-->
+    <input id="night_day" type="button" value="night" onclick="
+    if(document.querySelector('#night_day').value === 'night'){
+      document.querySelector('body').style.backgroundColor='black';
+      document.querySelector('body').style.color='white';
+      document.querySelector('#night_day').value = 'day';
+    } else {
+      document.querySelector('body').style.backgroundColor='white';
+      document.querySelector('body').style.color='black'
+      document.querySelector('#night_day').value = 'night';
+      }
+    ">
+    <!--
+    if가 트루면 실행하고 else는 무시된다.
+    반대로, if가 false면 무시되고 else는 실행된다.
+
+    따라서 if 조건에 따라 #night day 선택자의 value값이 night이기 때문에 if는 true. 실행되고
+    else는 무시된다.
+
+    실행됨에 따라 #night day 선택자의 value값이 day로 바뀌었고 if는 false가 되어 무시되고 else가 실행된다.
+    -->
+
+    <hr>
+    <h1>비교 연산자 & 불리언)Comparison operators & Boolean</h1>
+    <h2>===</h2>
+    <h3>1===1</h3>
+    <script>
+      document.write(1==1);
+    </script>
+
+    <h3>1===2</h3>
+    <script>
+      document.write(1==2);
+    </script>
+
+    <h3>1&lt;2</h3>
+    <script>
+      document.write(1<2);
+    </script>
+
+    <h3>1&gt;2</h3>
+    <script>
+      document.write(1>2);
+    </script>
+    <!-- html에서 <는 태그의 시작과 끝이기 때문에 오류를 피하기 위해 &lt;(<) &gt;(>)를 써준다.-->
+
+    <hr>
+    <h1>자바스크립트 개요(JavaScript)</h1>
+    <h3></h3>
+    <script>
+      document.write(1+1);
+      document.write('ii'+'ii');
+    </script>
+    <!-- 자바스크립트 언어를 사용하기 위해서는 CSS는 head에 style로 묶는 것 처럼 body에 script로 묶어 줘야 함.
+
+    datatype = 숫자열(number), 문자열(string), 비교(Boolean)
+
+    1+1은 2가 출력된다. (숫자열)
+    '1'+'1'은 11이 출력된다. (숫자열)
+    -->
+    <h1>html</h1>
+    hello world
+
+    <hr>
+    <h1>조건문(Conditional statements)</h1>
+    <h2>Program</h2>
+    <script>
+      document.write("1<br>");
+      document.write("2<br>");
+      document.write("3<br>");
+      document.write("4<br>");
+    </script>
+
+    <hr>
+    <h1>조건문(if-true)</h1>
+    <script>
+      document.write("1<br>");
+      if(true){
+      document.write("2<br>");
+      } else {
+      document.write("3<br>");
+      }
+      document.write("4<br>");
+    </script>
+    <!-- if값이 treu면 1번째 중괄호가 실행되고 두번째 중괄호는 무시된다.-->
+
+    <hr>
+    <h1>조건문(if-false)</h1>
+    <script>
+      document.write("1<br>");
+      if(false){
+      document.write("2<br>");
+      } else {
+      document.write("3<br>");
+      }
+      document.write("4<br>");
+    </script>
+    <!-- if값이 false면 1번째 중괄호가 무시되고 두번째 중괄호는 실행된다.-->
+
+  </body>
+</html>
