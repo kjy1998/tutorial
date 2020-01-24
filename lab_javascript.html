@@ -32,7 +32,7 @@
     }
     </script>
     <!-- 자바스크립트의 함수(function)데이터를 사용 하기 위한 script태그를 사용하였다.-->
-    
+
   </head>
   <body>
     <input type="button" value="hi" onclick="alert('Hi')">
@@ -141,8 +141,26 @@
       nightDayHandler(this);
     ">
 
+    <!-- function nightDayHandler(self)-> nightDayHandler라는 함수를 만들었을 때,
+    self(매개변수)는 nightDayHandler(this)의 this(인수)를 부를 방식이다.
+
+    철수의 키가 몇이냐고 물었을 때,
+    철수의 키는 인수를 표현하는 방식, 매개변수가 되고 180이라는 실질적인 값(데이터), 인수를 가진다.
+
+    여기서 출력을 포함해서 예시를 들어보면
+    철수와 영희의 키가 몇이냐고 물었을 때,
+    철수의 키, 영희의 키라는 매개변수를 가지고 각각 180, 168이라는 인수를 가지며
+    인수를 어떻게 다룰지, 즉 인수를 곱할지 더할지해서 348로 결정짓는 리턴(출력)
+    document.write는 최종적으로 어떻게 출력할 지, 즉 348에 cm를 더해서 348cm로 출력한다.
+
+    즉, self의 실질적인 값은 this이다.
+
+    여기서 철수와 영희의 키는 몇이냐고 물어보는 것처럼 매개변수와 인수는 복수가 될 수 있다.
+    -->
+
+
     <hr>
-    <h1>비교 연산자 & 불리언)Comparison operators & Boolean</h1>
+    <h1>비교 연산자 & 불리언(Comparison operators & Boolean)</h1>
     <h2>===</h2>
     <h3>1===1</h3>
     <script>
@@ -293,7 +311,7 @@
     coworkers.length -> coworkers 변수에 몇개의 데이터가 들어있는지.
 
     cowerkers[i] => coworkers 변수의 i번째 데이터
-
+ 
     i = i + 1; 참일 때 i의 변수에 1을 더한다. -> i=1
 
     -->

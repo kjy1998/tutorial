@@ -48,7 +48,7 @@
     <input id="night_day" type="button" value="night" onclick="
      nightDayHandler(this);
      ">
-     <!-- 함수(function)를 이용한 기능 head에 script 태그-->
+     <!-- 함수(function)를 이용한 기능, head에 script태그 안에 내용있음-->
 
     <h1 style="font-size:20px;">
     <a href="index.html"
@@ -81,6 +81,54 @@
         two();
       </script>
     </ul>
-    <!-- -->
+    <!-- 자바스크립트를 사용하기 위해 script태그로 감싸주었고 함수(function) 데이터로 two라는 함수를 만들어주었다.
+    two는 단지 문자일 뿐이지만, two에 ()괄호가 추가되는 순간 two라는 이름의 함수로 인식한다.
+    -->
+
+    <hr>
+    <h2>입력/매개변수와 인수(parameter & argument)</h2>
+    <script>
+      function onePlusOne(){
+        document.write(1+1+'<br>');
+      }
+      onePlusOne();
+      function sum(left,right){
+        document.write(left+right+'<br>');
+      }
+      function sumColorRed(left,right){
+        document.write('<div style="color:red">'+(left+right+'</div><br>');
+
+      /*
+      {}는 조건을 의미함
+      즉, function sum(left,right){
+          document.write(left+right+'<br>');
+          }는 }안에 있기 때문에 조건임.
+
+      function sum(left, right)는 left와 right의 매개변수를 가지고
+      sum(2,3)은 2와 3라는 실질적인 값, 인수를 가집니다.
+      매개변수 left와 인수 2는 연결되고 right와 3은 연결됩니다.
+
+      return은 함수(매개변수와 인수)를 어떻게 다룰 것인지
+      document.write은 데이터(함수포함)을 출력할 것인지를 결정합니다.
+      */
+
+
+      //sumColorRed의 <div>+left+right는 문자+숫자+숫자이다. javascript는 우선적으로 문자+숫자인 경우 문자로 인식해서 23이 나와버렸다. 숫자로 보게 하기 위해서는 left+right를 (left+right)로 묶어주면 된다.
+      }
+      sum(2,3);
+      sumColorRed(2,3);
+      sum(3,4);
+      </script>
+
+      <h2>출력(Return)</h2>
+      <script>
+        function sum2(left, right){
+          return left+right;
+        }
+        document.write(sum2(2,3)+'<br>');
+        document.write('<div style="color:red">'+sum2(2,3)+'</div>');
+        document.write('<div style="font-size:3rem">'+sum2(2,3)+'</div>');
+        //
+      </script>
   </body>
 </html>
