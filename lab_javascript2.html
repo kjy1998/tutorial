@@ -1,0 +1,86 @@
+<!doctype html>
+<html><head>
+    <title>BLOG, BY JAEYUN</title>
+    <meta charset="utf-8">
+    <style>
+      a {
+        color:black;
+      }
+    </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156591430-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-156591430-1');
+
+
+      function nightDayHandler(self) {
+        var target = document.querySelector('body');
+        if(self.value === 'night'){
+          target.style.backgroundColor = 'black';
+          target.style.color = 'white';
+          self.value = 'day';
+
+          var alist = document.querySelectorAll('a');
+          var i = 0;
+          while(i < alist.length){
+            alist[i].style.color = 'powderblue';
+            i = i + 1;
+          }
+        } else {
+          target.style.backgroundColor = 'white';
+          target.style.color = 'black';
+          self.value = 'night';
+
+          var alist = document.querySelectorAll('a');
+          var i = 0;
+          while(i < alist.length){
+            alist[i].style.color = 'blue';
+            i = i + 1;
+        }
+      }
+    }
+    </script>
+    <!-- 자바스크립트의 함수(function) 데이터를 사용 하기 위한 head태그 안에 script태그를 사용하였다.-->
+  </head>
+  <body>
+    <input id="night_day" type="button" value="night" onclick="
+     nightDayHandler(this);
+     ">
+     <!-- 함수(function)를 이용한 기능 head에 script 태그-->
+
+    <h1 style="font-size:20px;">
+    <a href="index.html"
+    title="index"><strong>메인화면</strong>
+    </a>
+    </h1>
+    <h2>목차</h2>
+    <ul>
+      <li><a href="plan.html">계획</a></li>
+      <p style="margin-top:10px;"><li><a href="lab.html">실험실</a></li></p>
+      <p style="margin-top:10px;"><li><a href="coding.html">코딩공부</a></li></p>
+      <p style="margin-top:10px;"><li><a href="idea.html">아이디어</a></li></p>
+      <p style="margin-top:10px;"><li><a href="helpful.html">유용한 사이트</a></li></p>
+    </ul>
+    <h2>메인화면</h2>
+    <p>대충 메인화면이라는 소개</p>
+
+    <hr>
+    <h1>함수(Function)</h1>
+    <h2>문법(Basic)</h2>
+    <ul>
+      <script>
+        function two(){
+          document.write('<li>2-1</li>');
+          document.write('<li>2-2</li>');
+        }
+        document.write('<li>1</li>');
+        two();
+        document.write('<li>3</li>');
+        two();
+      </script>
+    </ul>
+    <!-- -->
+  </body>
+</html>

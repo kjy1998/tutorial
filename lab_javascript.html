@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+    function nightDayHandler(self){
+      var target = document.querySelector('body')
+      if(self.value === 'night'){
+        target.style.backgroundColor='black';
+        target.style.color='white';
+        self.value = 'day';
+
+        var h2list = document.querySelectorAll('h2');
+        var i = 0;
+        while(i < h2list.length){
+          h2list[i].style.color = 'powderblue';
+          i = i + 1;
+        }
+      } else {
+        target.style.backgroundColor='white';
+        target.style.color='black'
+        self.value = 'night';
+
+        var h2list = document.querySelectorAll('h2');
+        var i = 0;
+        while(i < h2list.length){
+          h2list[i].style.color = 'blue';
+          i = i + 1;
+        }
+      }
+    }
+    </script>
+    <!-- 자바스크립트의 함수(function)데이터를 사용 하기 위한 script태그를 사용하였다.-->
+    
+  </head>
+  <body>
+    <input type="button" value="hi" onclick="alert('Hi')">
+    <input type="text" onchange="alert('chnaged')">
+    <input type="text" onkeydown="alert('key down')">
+
+    <!-- onclick onchange onkeydown 이벤트(event)라고 함.
+    이벤트 안에는 자바스크립트 언어가 입력되어야 함.
+
+    자바스크립트 언어는 ""(큰따음표)안에는 ''(작은따옴표)가 와야 함. 반대로 ''(작은따옴표)안에는 ""(큰따옴표)가 와야 함.
+    하나라도 바뀌면 작동안함.
+    -->
+
+    <input type="button" value="night" onclick="
+      document.querySelector('body').style.backgroundColor='black';
+      document.querySelector('body').style.color='white';
+    ">
+    <input type="button" value="day" onclick="
+      document.querySelector('body').style.backgroundColor='white';
+      document.querySelector('body').style.color='black'
+    ">
+    <!-- body라는 태그의 css(style)를 선택하여 배경을 검은색/하얀색, 글씨색을 하얀색/검은색으로 한다.-->
+
+    <!-- 윗태그의 개선안인 아래 태그-->
+    <input id="night_day" type="button" value="night" onclick="
+    if(document.querySelector('#night_day').value === 'night'){
+      document.querySelector('body').style.backgroundColor='black';
+      document.querySelector('body').style.color='white';
+      document.querySelector('#night_day').value = 'day';
+    } else {
+      document.querySelector('body').style.backgroundColor='white';
+      document.querySelector('body').style.color='black'
+      document.querySelector('#night_day').value = 'night';
+      }
+    ">
+    <!--
+    if가 트루면 실행하고 else는 무시된다.
+    반대로, if가 false면 무시되고 else는 실행된다.
+
+    따라서 if 조건에 따라 #night day 선택자의 value값이 night이기 때문에 if는 true. 실행되고
+    else는 무시된다.
+
+    실행됨에 따라 #night day 선택자의 value값이 day로 바뀌었고 if는 false가 되어 무시되고 else가 실행된다.
+    -->
+
+    <input id="night_day2" type="button" value="night" onclick="
+    if(document.querySelector('#night_day2').value === 'night'){
+      document.querySelector('body').style.backgroundColor='black';
+      document.querySelector('body').style.color='white';
+      document.querySelector('#night_day2').value = 'day';
+    } else {
+      document.querySelector('body').style.backgroundColor='white';
+      document.querySelector('body').style.color='black'
+      document.querySelector('#night_day2').value = 'night';
+      }
+    ">
+
+    <!--
+    위의 태그와 똑같은 내용인데 각자 기능에 영향을 주지 않기 위해
+    선택자를 #night_day에서  #night_day2로 바꾸어 준 것.
+    * ctrl+d누르면 똑같은 내용 선택 됨.
+    -->
+
+    <input type="button" value="night" onclick="
+    var target = document.querySelector('body')
+    if(this.value === 'night'){
+      target.style.backgroundColor='black';
+      target.style.color='white';
+      this.value = 'day';
+
+      var h2list = document.querySelectorAll('h2');
+      var i = 0;
+      while(i < h2list.length){
+        h2list[i].style.color = 'powderblue';
+        i = i + 1;
+      }
+    } else {
+      target.style.backgroundColor='white';
+      target.style.color='black'
+      this.value = 'night';
+
+      var h2list = document.querySelectorAll('h2');
+      var i = 0;
+      while(i < h2list.length){
+        h2list[i].style.color = 'blue';
+        i = i + 1;
+      }
+    }
+
+    ">
+    <!--
+    코딩에서 중요한 리팩토링(중복제거를 통하여 효율성을 높임.)
+    1. this.value 이것(사용하고 있는 태그 안의) value값.
+    즉 id클래스를 통해 지정해줄 필요가 없기 때문에 #night_day가 필요없어짐.
+
+    2. var target = document.querySelector('body')
+    target이라는 변수는 document.querySelector('body')와 같은 의미(대체)한다.
+
+    3. var h2list = document.querySelectorAll('h2')
+    h2list라는 변수는 document.querySelectorAll('h2')와 같은 의미를 가지며 'h2' 태그를 가진 전부를 지정, 배열한다.
+    -->
+
+
+    <!-- 함수(function)를 이용한 기능 head에 script 태그-->
+    <input type="button" value="night" onclick="
+      nightDayHandler(this);
+    ">
+
+    <hr>
+    <h1>비교 연산자 & 불리언)Comparison operators & Boolean</h1>
+    <h2>===</h2>
+    <h3>1===1</h3>
+    <script>
+      document.write(1==1);
+    </script>
+
+    <h3>1===2</h3>
+    <script>
+      document.write(1==2);
+    </script>
+
+    <h3>1&lt;2</h3>
+    <script>
+      document.write(1<2);
+    </script>
+
+    <h3>1&gt;2</h3>
+    <script>
+      document.write(1>2);
+    </script>
+    <!-- =는 지정연산자, ===는 비교연산자.
+    html에서 <는 태그의 시작과 끝이기 때문에 단지 표시하기 목적을 가진 태그인  &lt;(<) &gt;(>)를 써준다.-->
+
+    <hr>
+    <h1>자바스크립트 개요(JavaScript)</h1>
+    <h3></h3>
+    <script>
+      document.write(1+1);
+      document.write('ii'+'ii');
+    </script>
+    <!-- 자바스크립트 언어를 사용하기 위해서는 CSS는 head에 style로 묶는 것 처럼 script로 묶어 줘야 함.
+
+    datatype = 숫자열(number), 문자열(string), 비교(Boolean)
+    변수(var), 정렬(array), 함수(function), 객체(object)
+
+    1+1은 2가 출력된다. (숫자열)
+    '1'+'1'은 11이 출력된다. (숫자열)
+    -->
+
+    <hr>
+    <h1>조건문(Conditional statements)</h1>
+    <h2>Program</h2>
+    <script>
+      document.write("1<br>");
+      document.write("2<br>");
+      document.write("3<br>");
+      document.write("4<br>");
+    </script>
+
+    <hr>
+    <h1>조건문(if-true)</h1>
+    <script>
+      document.write("1<br>");
+      if(true){
+        document.write("2<br>");
+      } else {
+        document.write("3<br>");
+      }
+      document.write("4<br>");
+    </script>
+    <!-- if값이 treu면 1번째 중괄호가 실행되고 두번째 중괄호는 무시된다.-->
+    <hr>
+    <hr>
+    <h1>조건문(if-false)</h1>
+    <script>
+      document.write("1<br>");
+      if(false){
+        document.write("2<br>");
+      } else {
+        document.write("3<br>");
+      }
+      document.write("4<br>");
+    </script>
+    <!-- if값이 false면 1번째 중괄호가 무시되고 두번째 중괄호는 실행된다.-->
+    <hr>
+    <hr>
+    <h1>배열(Array)</h1>
+    <h2>문법(Syntax)</h2>
+    <script>
+      var coworkers = ["egoing", "leezche"];
+    </script>
+    <!--
+    coworkers라는 변수 안에 0번째(egoing)과 1번째 leezche를 배열한다.-->
+    <hr>
+    <h2>가져오기(get)</h2>
+    <script>
+      document.write(coworkers[0]);
+      document.write(coworkers[1]);
+    </script>
+    <!-- coworkers라는 변수 안의 0번째 데이터를 가져온다 -->
+    <hr>
+    <h2>추가(add)</h2>
+    <script>
+      coworkers.push('duru');
+      coworkers.push('taeho');
+    </script>
+    <!-- coworkers라는 변수 안에 duru와 taeho를 추가배열한다.
+    => "egoing", "leezche", "duru", "taeho"-->
+    <hr>
+    <h2>배열 카운트(array count)</h2>
+    <script>
+      document.write(coworkers.length);
+    </script>
+    <!-- cowokers라는 변수 안의 데이터가 몇개 배열되어 있는지 카운트한다.-->
+    <hr>
+    <h2>반복문(Loop)</h2>
+    <ul>
+    <script>
+      document.write('<li>1</li>');
+      var i = 0;
+      while(i < 3){
+        document.write('<li>2</li>');
+        document.write('<li>3</li>');
+        i = i + 1;
+      }
+      document.write('<li>4</li>');
+    </script>
+    </ul>
+  <!-- 극단적으로 생각하기(똑같은 내용을 1억개나 추가해야한다면)
+  => 조건문(if)와 형태 비슷 while(true or false){}
+  비슷한 요소는 for이 있음.
+  ()안의 조건이 true이면 {}안에 있는 내용이 사용되고 다시 조건이 만족되면 또 사용됨에 따라 무한히 반복될 수 있음.
+
+  카운트를 할 때 변수는 i로 약속&선언한다.
+  i = 0. 0 < 3 -> 참   => 1 2 3
+  i = 1. 1 < 3 -> 참   => 1 2 3 2 3
+  i = 2. 2 < 3 -> 참   => 1 2 3 2 3 2 3
+  i = 3. 3 < 3 -> 거짓 => 1 2 3 2 3 2 3 4
+  -->
+    <hr>
+    <h2>반복문과 배열(Loop & Array)</h2>
+    <script>
+      var coworkers = ['egoing', 'leezche', 'duru', 'taeho', 'graphttie'];
+    </script>
+    <h3>Coworkers</h3>
+    <ul>
+      <script>
+        var i = 0;
+        while(i < coworkers.length){
+        document.write('<li><a href="http://a.com/'+coworkers[i]+'">'+coworkers[i]+'</li>');
+        i = i + 1;
+        }
+      </script>
+    </ul>
+    <!--
+    var i = 0; 초기의 i값을 0으로 둔다.
+
+    coworkers.length -> coworkers 변수에 몇개의 데이터가 들어있는지.
+
+    cowerkers[i] => coworkers 변수의 i번째 데이터
+
+    i = i + 1; 참일 때 i의 변수에 1을 더한다. -> i=1
+
+    -->
+
+  </body>
+</html>
