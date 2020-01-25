@@ -19,7 +19,7 @@
         }
       } else {
         target.style.backgroundColor='white';
-        target.style.color='black'
+        target.style.color='black';
         self.value = 'night';
 
         var h2list = document.querySelectorAll('h2');
@@ -36,10 +36,10 @@
   </head>
   <body>
     <input type="button" value="hi" onclick="alert('Hi')">
-    <input type="text" onchange="alert('chnaged')">
+    <input type="text" onchange="alert('changed')">
     <input type="text" onkeydown="alert('key down')">
 
-    <!-- onclick onchange onkeydown 이벤트(event)라고 함.
+    <!-- onclick onchange onkeydown등을 이벤트(event)라고 함.
     이벤트 안에는 자바스크립트 언어가 입력되어야 함.
 
     자바스크립트 언어는 ""(큰따음표)안에는 ''(작은따옴표)가 와야 함. 반대로 ''(작은따옴표)안에는 ""(큰따옴표)가 와야 함.
@@ -52,7 +52,7 @@
     ">
     <input type="button" value="day" onclick="
       document.querySelector('body').style.backgroundColor='white';
-      document.querySelector('body').style.color='black'
+      document.querySelector('body').style.color='black';
     ">
     <!-- body라는 태그의 css(style)를 선택하여 배경을 검은색/하얀색, 글씨색을 하얀색/검은색으로 한다.-->
 
@@ -124,7 +124,13 @@
 
     ">
     <!--
-    코딩에서 중요한 리팩토링(중복제거를 통하여 효율성을 높임.)
+    코딩에서 중요한 리팩토링(코드의 중복제거를 통하여 효율성을 높임.)
+
+    같은 이름의 변수를 중복선언하였을 때는 가장 가까운 변수를 따른다.
+    (var i = 0; i를 0으로 선언한 후
+    var i = 1; 바로 i를 1로 선언하면
+    i는 최종정으로 1을 의미한다.)
+
     1. this.value 이것(사용하고 있는 태그 안의) value값.
     즉 id클래스를 통해 지정해줄 필요가 없기 때문에 #night_day가 필요없어짐.
 
@@ -133,11 +139,18 @@
 
     3. var h2list = document.querySelectorAll('h2')
     h2list라는 변수는 document.querySelectorAll('h2')와 같은 의미를 가지며 'h2' 태그를 가진 전부를 지정, 배열한다.
+
+    querySelector('')는 같은 이름의 태그 중 첫번째의 태그만 선택해주고
+    querySelectorAll('')는 같은 이름의 태그를 모두 선택해준다.
     -->
 
 
     <!-- 함수(function)를 이용한 기능 head에 script 태그-->
     <input type="button" value="night" onclick="
+      nightDayHandler(this);
+    ">
+
+    <input type='button' value='night' onclick="
       nightDayHandler(this);
     ">
 
@@ -153,7 +166,7 @@
     인수를 어떻게 다룰지, 즉 인수를 곱할지 더할지해서 348로 결정짓는 리턴(출력)
     document.write는 최종적으로 어떻게 출력할 지, 즉 348에 cm를 더해서 348cm로 출력한다.
 
-    즉, self의 실질적인 값은 this이다.
+    즉, self의 실질적인 값은 this이다. input => this, function => 매개변수
 
     여기서 철수와 영희의 키는 몇이냐고 물어보는 것처럼 매개변수와 인수는 복수가 될 수 있다.
     -->
@@ -181,7 +194,13 @@
     <script>
       document.write(1>2);
     </script>
-    <!-- =는 지정연산자, ===는 비교연산자.
+    <!--
+    =는 왼쪽 피연산자에 오른쪽 피연산자의 값을 대입함.
+    == 왼쪽 피연산자와 오른쪽 피연산자의 값이 같으면 참을 반환함.(타입이 달라도)
+    === 왼쪽 피연산자와 오른쪽 피연산자의 값이 같고, 같은 타입이면 참을 반환함
+
+    자바스크립트에서 태그를 포함한 컨텐트인 경우 따옴표를 씌워주어야 한다.
+    -->
     html에서 <는 태그의 시작과 끝이기 때문에 단지 표시하기 목적을 가진 태그인  &lt;(<) &gt;(>)를 써준다.-->
 
     <hr>
@@ -189,7 +208,7 @@
     <h3></h3>
     <script>
       document.write(1+1);
-      document.write('ii'+'ii');
+      document.write('ii'+'ii')
     </script>
     <!-- 자바스크립트 언어를 사용하기 위해서는 CSS는 head에 style로 묶는 것 처럼 script로 묶어 줘야 함.
 
@@ -311,7 +330,7 @@
     coworkers.length -> coworkers 변수에 몇개의 데이터가 들어있는지.
 
     cowerkers[i] => coworkers 변수의 i번째 데이터
- 
+
     i = i + 1; 참일 때 i의 변수에 1을 더한다. -> i=1
 
     -->

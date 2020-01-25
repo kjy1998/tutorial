@@ -8,47 +8,8 @@
       }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-156591430-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-156591430-1');
-
-
-      function nightDayHandler(self) {
-        var target = document.querySelector('body');
-        if(self.value === 'night'){
-          target.style.backgroundColor = 'black';
-          target.style.color = 'white';
-          self.value = 'day';
-
-          var alist = document.querySelectorAll('a');
-          var i = 0;
-          while(i < alist.length){
-            alist[i].style.color = 'powderblue';
-            i = i + 1;
-          }
-        } else {
-          target.style.backgroundColor = 'white';
-          target.style.color = 'black';
-          self.value = 'night';
-
-          var alist = document.querySelectorAll('a');
-          var i = 0;
-          while(i < alist.length){
-            alist[i].style.color = 'blue';
-            i = i + 1;
-        }
-      }
-    }
-    </script>
-    <!-- 자바스크립트의 함수(function) 데이터를 사용 하기 위한 head태그 안에 script태그를 사용하였다.-->
   </head>
   <body>
-    <input id="night_day" type="button" value="night" onclick="
-     nightDayHandler(this);
-     ">
-     <!-- 함수(function)를 이용한 기능, head에 script태그 안에 내용있음-->
 
     <h1 style="font-size:20px;">
     <a href="index.html"
@@ -82,7 +43,7 @@
       </script>
     </ul>
     <!-- 자바스크립트를 사용하기 위해 script태그로 감싸주었고 함수(function) 데이터로 two라는 함수를 만들어주었다.
-    two는 단지 문자일 뿐이지만, two에 ()괄호가 추가되는 순간 two라는 이름의 함수로 인식한다.
+    two는 단지 문자일 뿐이지만, two에 ()괄호가 추가되는 순간 two라는 이름의 함수로 인식하며 two라는 함수의 컨텐트를 불러와야겠구나!라고 생각함
     -->
 
     <hr>
@@ -96,8 +57,8 @@
         document.write(left+right+'<br>');
       }
       function sumColorRed(left,right){
-        document.write('<div style="color:red">'+(left+right+'</div><br>');
-
+        document.write('<div style="color:red">'+(left+right)+'</div><br>');
+      }
       /*
       {}는 조건을 의미함
       즉, function sum(left,right){
@@ -105,7 +66,7 @@
           }는 }안에 있기 때문에 조건임.
 
       function sum(left, right)는 left와 right의 매개변수를 가지고
-      sum(2,3)은 2와 3라는 실질적인 값, 인수를 가집니다.
+      sum(2,3)은 2와 3이라는 실질적인 값, 인수를 가집니다.
       매개변수 left와 인수 2는 연결되고 right와 3은 연결됩니다.
 
       return은 함수(매개변수와 인수)를 어떻게 다룰 것인지
@@ -114,7 +75,7 @@
 
 
       //sumColorRed의 <div>+left+right는 문자+숫자+숫자이다. javascript는 우선적으로 문자+숫자인 경우 문자로 인식해서 23이 나와버렸다. 숫자로 보게 하기 위해서는 left+right를 (left+right)로 묶어주면 된다.
-      }
+
       sum(2,3);
       sumColorRed(2,3);
       sum(3,4);
