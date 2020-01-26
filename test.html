@@ -1,21 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head lang="ko">
-    <title>BLOG, BY JAEYUN</title>
-    <meta charset="utf-8"
-  </head>
-  <body>
-    <h1 style=font-size:60px;"><a href="index.html" title="index"><strong>메인화면<strong></a></h1>
-    <img src="girl.jpg" width="20%" title="thunbnail">
-    <h2>목차</h2>
-    <ul>
-      <li><a href="plan.html">계획</a></li>
-      <div style="margin-top:10px;"><li><a href="lab.html">실험실</a></li></div>
-      <p style="margin-top:10px;"><li><a href="coding.html">코딩공부</a></li></p>
-      <p style="margin-top:10px;"><li><a href="idea.html">아이디어</a></li></p>
-      <p style="margin-top:10px;"><li><a href="helpful.html">유용한 사이트</a></li></p>
-    </ul>
-    <h2>메인화면</h2>
-    <p>대충 메인화면이라는 소개</p>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>test</title>
+  <script src="colors.js"></script>
+</head>
+<body>
+  <h1>객체</h1>
+  <script>
+    var coworkers = {
+      "programmer" : "egoing",
+      "designer" : "leezche"
+    };
+    document.write("programmer : " + coworkers.programmer + "<br>");
+    document.write("designer : " + coworkers.designer + "<br>");
+    coworkers.bookeeper = "duru";
+    document.write("bookeeper : " + coworkers.bookeeper + "<br>");
+    coworkers["data scientist"] = "taeho";
+    document.write("data scientist : " + coworkers["data scientist"] + "<br>");
+  </script>
+
+  <h2>객체반복 Iterate</h2>
+  <script>
+    for (var key in coworkers) {
+      document.write(key + '<br>');
+    }
+    for (var key in coworkers) {
+      document.write(coworkers[key] + '<br>');
+    }
+    for (var key in coworkers) {
+      document.write(key + ' : ' + coworkers[key] + '<br>');
+    }
+  </script>
+
+  <h2>Property & Method</h2>
+  <script>
+    coworkers.showAll = function() {
+      for (var key in this) {
+        document.write(key + ' : ' + this[key] + '<br>');
+      }
+    }
+    coworkers.showAll();
+  </script>
+</body>
 </html>

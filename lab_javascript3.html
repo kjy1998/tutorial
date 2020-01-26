@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>lab_javascript3</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- J쿼리 -->
+  <script src="colors.js"></script>
+</head>
+
+<body>
+  <input type="button" value="night" onclick="
+      nightDayHandler(this);
+      ">
+  <h1>Plan</h1>
+  <a href="plan.html">Plan</a>
+
+  <h1>객체(object)</h1>
+  <h2>생성(Create)</h2>
+  <script>
+    var coworkers = {
+      "programmer": "egoing",
+      "designer": "leezche"
+      //coworkers 객체 / programmer 프로퍼티명 / egoing 프로퍼티값 // 프로퍼티의 값으로 함수가 오는 경우는 메소드라고 하며 함수처럼 뒤에 ()괄호를 붙여줘야 한다.
+
+      //객체 안에 프로퍼티(메소드)가 순서없이 정렬되어 있다.
+      // 여러개의 프로퍼티를 구분할 때 ,를 적어줘야 한다
+
+
+    };
+    document.write("programmer : " + coworkers.programmer + "<br>");
+    document.write("designer : " + coworkers.designer + "<br>");
+    coworkers.bookkeeper = "duru";
+    document.write("bookkeeper : " + coworkers.bookkeeper + "<br>");
+    coworkers["data scientist"] = "taeho";
+    document.write("data scientist : " + coworkers["data scientist"] + "<br>");
+  </script>
+  <!--
+    배열은 대괄호 순서대로 정돈, 객체는 중괄호, 순서없이 정돈
+
+    객체의 프로퍼티(메소드)값 참조하는 방법
+    1.객체이름.프로퍼티명(메소드명)
+    2.객체이름["프로퍼티명(메소드명)"]
+
+    coworkers.bookkeeper = "duru"; 와
+    coworkers["data scientist"] = "taeho"는 둘다 선언된 변수에 내용을 추가한다는 목적은 같다. 하지만 data scientist 이름에는 공백을 넣을 수 없기때문에 배열을 사용해준 것.
+    -->
+  <h2>객체반복 Iterate</h2>
+  <script>
+    for (var key in coworkers) {
+      document.write(key + '<br>');
+    }
+    for (var key in coworkers) {
+      document.write(coworkers[key] + '<br>');
+    }
+    for (var key in coworkers) {
+      document.write(key + ' : ' + coworkers[key] + '<br>');
+    }
+  </script>
+  <!-- 객체를 순회하는 방법(뭐가 들어있는지!) -->
+
+  <h2>Property & Method</h2>
+  <script>
+    coworkers.showAll = function() {
+      for (var key in this) {
+        document.write(key + ' : ' + this[key] + '<br>');
+      }
+    }
+    coworkers.showAll();
+  </script>
+</body>
+
+</html>
